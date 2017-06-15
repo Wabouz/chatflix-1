@@ -49,8 +49,15 @@ class User:
 
         # On enlève les espaces en trop et on met tout le message en miniscule
         clean_message = message.lower().strip()
-        self.latest_movie_asked = None
-
+        if (clean_message == ("oui" or "yes")):
+            answer_yes(self)
+            print(self.questions_before_recommendation,"\n",self.good_ratings,"\n",self.bad_ratings,"\n",self.neutral_ratings)
+        elif (clean_message == ("nan" or "non" or "no")):
+            answer_no(self)
+            print(self.questions_before_recommendation,"\n",self.good_ratings,"\n",self.bad_ratings,"\n",self.neutral_ratings)
+        elif (clean_message == "neutre" or "idk"):
+            answer_neutral(self)
+            print(self.questions_before_recommendation,"\n",self.good_ratings,"\n",self.bad_ratings,"\n",self.neutral_ratings)
         # Il faut traiter ici le message
         return
 
