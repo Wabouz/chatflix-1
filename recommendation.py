@@ -2,6 +2,7 @@
 
 from User import User
 from random import randint
+from random import choice
 
 import numpy as np
 from sklearn.cluster import KMeans
@@ -74,8 +75,7 @@ class Recommendation:
 
     # Pose une question à l'utilisateur
     def ask_question(self, user):
-        a = randint(0,1)
-        return ("Avez-vous aimé le Seigneur des Anneaux ?"*a+"Avez-vous aimé Harry Potter ?"*(1-a))
+        return ("Avez-vous aimé " + choice(movies_list))
 
     # Calcule la similarité entre 2 utilisateurs
     @staticmethod
