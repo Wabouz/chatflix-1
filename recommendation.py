@@ -82,7 +82,6 @@ class Recommendation:
     # Calcule la similarité entre 2 utilisateurs
     @staticmethod
     def get_similarity(user_a, user_b):
-        for
         return 0
 
     # Calcule la similarité entre un utilisateur et tous les utilisateurs de tests
